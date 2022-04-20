@@ -28,9 +28,23 @@ namespace AdapterDesignPattern
             #endregion
 
 
-            #region tubelight implementation
+            #region inheritance solution implementation
             EmployeeNoAdapterSimple empS = new EmployeeNoAdapterSimple();
             string valueSimple = empS.GetAllEmployeesSimple();
+            #endregion
+
+
+
+
+            #region Adaptee attribute implementation
+            EmployeeManagerAdapteeAttribute empManagerAdaptee = new EmployeeManagerAdapteeAttribute();
+            string xmlValueAdaptee = empManagerAdaptee.GetAllEmployeesAdapteeAttribute();
+            #endregion
+
+
+            #region Adaptee attribute implementation
+            EmployeeNoAdapterAdapteeAttribute empAdaptee = new EmployeeNoAdapterAdapteeAttribute();
+            string valueAdaptee = empAdaptee.GetAllEmployeesAdapteeAttribute();
             #endregion
 
             Console.ReadLine();
@@ -171,7 +185,7 @@ namespace AdapterDesignPattern
         {
             this.employeeManagerAdapteeAttribute = new EmployeeManagerAdapteeAttribute();
         }
-        public string GetAllEmployeesSimple()
+        public string GetAllEmployeesAdapteeAttribute()
         {
             string returnXml = employeeManagerAdapteeAttribute.GetAllEmployeesAdapteeAttribute();
             System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
